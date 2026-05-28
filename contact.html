@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact NexMart — reach our support team via form, email, phone, or social media. We're here 24/7." />
+  <title>Contact Us — NexMart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="a11y-bar" role="complementary" aria-label="Accessibility tools">
+    <div class="a11y-inner">
+      <span class="a11y-label">Accessibility:</span>
+      <div class="font-size-controls" role="group" aria-label="Font size controls">
+        <span class="font-size-label">Text:</span>
+        <button class="font-size-btn" id="font-decrease" aria-label="Decrease font size">A−</button>
+        <button class="font-size-btn" id="font-reset" aria-label="Reset font size">A</button>
+        <button class="font-size-btn" id="font-increase" aria-label="Increase font size">A+</button>
+      </div>
+      <button class="a11y-toggle" id="contrast-toggle" aria-pressed="false" aria-label="Toggle high contrast mode">◑ High Contrast</button>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="NexMart Home">
+        <div class="logo-icon" aria-hidden="true">N</div>
+        <span class="logo-text">Nex<span>Mart</span></span>
+      </a>
+      <div class="header-search" role="search">
+        <svg class="search-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="header-search-input" placeholder="Search products…" aria-label="Search products" />
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+          <li><a href="cart.html" class="nav-cta">🛒 Cart (3)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Contact</span>
+      </nav>
+      <h1 class="page-title">Get In Touch</h1>
+      <p class="page-sub">Our support team is available 24/7. We typically respond within 2 hours.</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 class="sr-only" id="contact-heading">Contact NexMart</h2>
+
+        <div class="contact-layout">
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrap">
+            <h3 style="font-family:var(--ff-head);font-size:1.3rem;font-weight:700;color:var(--clr-white);margin-bottom:8px">Send Us a Message</h3>
+            <p style="color:var(--clr-muted);font-size:0.88rem;margin-bottom:24px">Fill out the form below and we'll get back to you within 2 hours.</p>
+
+            <div id="form-success" class="alert alert-success" style="display:none" role="alert">
+              ✅ Message sent successfully! We'll reply within 2 hours.
+            </div>
+
+            <form id="contact-form" novalidate aria-label="Contact form">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+                <div class="form-group">
+                  <label class="form-label" for="first-name">First Name <span aria-hidden="true" style="color:var(--clr-danger)">*</span></label>
+                  <input type="text" id="first-name" name="first-name" class="form-control" placeholder="Kofi" required autocomplete="given-name" aria-required="true" />
+                  <div class="form-error" id="first-name-error" role="alert" style="color:var(--clr-danger);font-size:0.78rem;margin-top:4px;display:none">Please enter your first name.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="last-name">Last Name <span aria-hidden="true" style="color:var(--clr-danger)">*</span></label>
+                  <input type="text" id="last-name" name="last-name" class="form-control" placeholder="Mensah" required autocomplete="family-name" aria-required="true" />
+                  <div class="form-error" id="last-name-error" role="alert" style="color:var(--clr-danger);font-size:0.78rem;margin-top:4px;display:none">Please enter your last name.</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address <span aria-hidden="true" style="color:var(--clr-danger)">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="kofi@email.com" required autocomplete="email" aria-required="true" />
+                <div class="form-error" id="email-error" role="alert" style="color:var(--clr-danger);font-size:0.78rem;margin-top:4px;display:none">Please enter a valid email address.</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number (optional)</label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+233 24 243 4675" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="subject">Subject <span aria-hidden="true" style="color:var(--clr-danger)">*</span></label>
+                <select id="subject" name="subject" class="form-control" required aria-required="true">
+                  <option value="" disabled selected>Select a topic…</option>
+                  <option value="order">Order Enquiry</option>
+                  <option value="return">Return / Refund</option>
+                  <option value="product">Product Question</option>
+                  <option value="delivery">Delivery Issue</option>
+                  <option value="account">Account Help</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Message <span aria-hidden="true" style="color:var(--clr-danger)">*</span></label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell us how we can help…" required aria-required="true" rows="5"></textarea>
+                <div class="form-error" id="message-error" role="alert" style="color:var(--clr-danger);font-size:0.78rem;margin-top:4px;display:none">Please enter your message (min 10 characters).</div>
+              </div>
+              <div class="form-group">
+                <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:0.85rem;color:var(--clr-muted)">
+                  <input type="checkbox" id="consent" name="consent" required aria-required="true" style="margin-top:3px;accent-color:var(--clr-accent)" />
+                  I agree to NexMart's <a href="#" style="color:var(--clr-accent)">Privacy Policy</a> and consent to being contacted regarding my enquiry.
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+                <span aria-hidden="true">📩</span> Send Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div>
+            <h3 style="font-family:var(--ff-head);font-size:1.3rem;font-weight:700;color:var(--clr-white);margin-bottom:20px">Contact Information</h3>
+            <ul class="contact-info-list" role="list">
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">📍</div>
+                <div>
+                  <div class="contact-info-label">Headquarters</div>
+                  <div class="contact-info-value">NexMart Limited, Achimota  <br>Accra, Greater Accra, Ghana</div>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">📞</div>
+                <div>
+                  <div class="contact-info-label">Phone</div>
+                  <div class="contact-info-value"><a href="tel:+233505726581" style="color:var(--clr-accent)">+233 50 572 6581</a></div>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">📧</div>
+                <div>
+                  <div class="contact-info-label">Email</div>
+                  <div class="contact-info-value"><a href="mailto:fiatihenry@gmail.com" style="color:var(--clr-accent)">fiatihenry@gmail.com</a></div>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">🕐</div>
+                <div>
+                  <div class="contact-info-label">Support Hours</div>
+                  <div class="contact-info-value">24 hours, 7 days a week<br><span style="color:var(--clr-success);font-size:0.85rem">● We're online now</span></div>
+                </div>
+              </li>
+              <li class="contact-info-item">
+                <div class="contact-info-icon" aria-hidden="true">⚡</div>
+                <div>
+                  <div class="contact-info-label">Average Response Time</div>
+                  <div class="contact-info-value">Under 2 hours for email<br>Under 5 minutes for live chat</div>
+                </div>
+              </li>
+            </ul>
+
+            <!-- Map button -->
+            <div style="margin-top:2rem;border-radius:var(--radius-lg);overflow:hidden;height:200px;background:var(--clr-mid);border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;">
+              <div style="text-align:center;color:rgba(255,255,255,.9);">
+                <i class="fas fa-map-marked-alt" style="font-size:2.5rem;margin-bottom:.75rem;display:block;color:var(--clr-primary);"></i>
+                <div style="font-size:.9rem;">Visit our location</div>
+                <div style="font-size:.8rem;margin-top:.25rem;color:rgba(255,255,255,.6);">Achimota, Accra</div>
+                <a href="https://maps.app.goo.gl/VDiVa7HCDNdWA1Y96" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="margin-top:1rem;display:inline-flex;align-items:center;gap:.5rem;">Open map location</a>
+              </div>
+            </div>
+          </div>
+
+            <!-- Social on contact page -->
+            <div style="margin-top:32px">
+              <h4 style="font-family:var(--ff-head);font-weight:700;color:var(--clr-white);margin-bottom:14px">Reach Us on Social Media</h4>
+              <div class="social-buttons" style="flex-direction:column;gap:8px">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn facebook" aria-label="Message NexMart on Facebook">📘 Facebook Messenger</a>
+                <a href="https://wa.me/233505726581" target="_blank" rel="noopener noreferrer" class="social-btn whatsapp" aria-label="Chat with NexMart on WhatsApp">💬 WhatsApp Chat</a>
+                </div>
+            </div>
+
+            <!-- FAQ Quick Links -->
+            <div style="margin-top:32px;background:var(--clr-card);border:1px solid var(--clr-border);border-radius:var(--radius-lg);padding:24px">
+              <h4 style="font-family:var(--ff-head);font-weight:700;color:var(--clr-white);margin-bottom:14px">Quick Answers</h4>
+              <ul style="display:flex;flex-direction:column;gap:10px;list-style:none">
+                <li><a href="#" style="color:var(--clr-muted);font-size:0.88rem;transition:color 0.2s" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-muted)'">→ How do I track my order?</a></li>
+                <li><a href="#" style="color:var(--clr-muted);font-size:0.88rem;" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-muted)'">→ What is your return policy?</a></li>
+                <li><a href="#" style="color:var(--clr-muted);font-size:0.88rem;" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-muted)'">→ How long does delivery take?</a></li>
+                <li><a href="#" style="color:var(--clr-muted);font-size:0.88rem;" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-muted)'">→ What payment methods are accepted?</a></li>
+                <li><a href="#" style="color:var(--clr-muted);font-size:0.88rem;" onmouseover="this.style.color='var(--clr-accent)'" onmouseout="this.style.color='var(--clr-muted)'">→ Is NexMart secure?</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;padding-bottom:24px">
+        <p class="footer-copy">© 2025 NexMart. All rights reserved.</p>
+        <nav class="footer-bottom-links" aria-label="Footer links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span class="toast-icon" aria-hidden="true">✅</span>
+    <span id="toast-msg">Message sent!</span>
+  </div>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => { const o=mainNav.classList.toggle('open'); navToggle.setAttribute('aria-expanded',o); });
+    let fontSize=16;
+    document.getElementById('font-increase').addEventListener('click', ()=>{fontSize=Math.min(fontSize+2,24);document.documentElement.style.fontSize=fontSize+'px';});
+    document.getElementById('font-decrease').addEventListener('click', ()=>{fontSize=Math.max(fontSize-2,12);document.documentElement.style.fontSize=fontSize+'px';});
+    document.getElementById('font-reset').addEventListener('click', ()=>{fontSize=16;document.documentElement.style.fontSize='16px';});
+    document.getElementById('contrast-toggle').addEventListener('click', function(){document.body.classList.toggle('high-contrast');this.setAttribute('aria-pressed',document.body.classList.contains('high-contrast'));});
+    document.getElementById('header-search-input').addEventListener('keydown', e=>{if(e.key==='Enter'&&e.target.value.trim()) window.location.href=`products.html?q=${encodeURIComponent(e.target.value.trim())}`;});
+
+    // Form Validation
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      const fn = document.getElementById('first-name');
+      const fnErr = document.getElementById('first-name-error');
+      const ln = document.getElementById('last-name');
+      const lnErr = document.getElementById('last-name-error');
+      const em = document.getElementById('email');
+      const emErr = document.getElementById('email-error');
+      const msg = document.getElementById('message');
+      const msgErr = document.getElementById('message-error');
+
+      fnErr.style.display = fn.value.trim() ? 'none' : 'block'; if (!fn.value.trim()) valid=false;
+      lnErr.style.display = ln.value.trim() ? 'none' : 'block'; if (!ln.value.trim()) valid=false;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      emErr.style.display = emailRegex.test(em.value) ? 'none' : 'block'; if (!emailRegex.test(em.value)) valid=false;
+      msgErr.style.display = msg.value.trim().length>=10 ? 'none' : 'block'; if (msg.value.trim().length<10) valid=false;
+
+      if (valid) {
+        document.getElementById('form-success').style.display='flex';
+        this.reset();
+        const t=document.getElementById('toast');
+        document.getElementById('toast-msg').textContent='✅ Message sent! We\'ll reply within 2 hours.';
+        t.classList.add('show');
+        setTimeout(()=>t.classList.remove('show'),3000);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your NexMart shopping cart. Review items, apply coupons, and proceed to secure checkout." />
+  <title>Shopping Cart — NexMart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="a11y-bar" role="complementary" aria-label="Accessibility tools">
+    <div class="a11y-inner">
+      <span class="a11y-label">Accessibility:</span>
+      <div class="font-size-controls" role="group" aria-label="Font size controls">
+        <span class="font-size-label">Text:</span>
+        <button class="font-size-btn" id="font-decrease" aria-label="Decrease font size">A−</button>
+        <button class="font-size-btn" id="font-reset" aria-label="Reset font size">A</button>
+        <button class="font-size-btn" id="font-increase" aria-label="Increase font size">A+</button>
+      </div>
+      <button class="a11y-toggle" id="contrast-toggle" aria-pressed="false" aria-label="Toggle high contrast mode">◑ High Contrast</button>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="NexMart Home">
+        <div class="logo-icon" aria-hidden="true">N</div>
+        <span class="logo-text">Nex<span>Mart</span></span>
+      </a>
+      <div class="header-search" role="search">
+        <svg class="search-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="header-search-input" placeholder="Search products…" aria-label="Search products" />
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" class="nav-cta active" aria-current="page">🛒 Cart (3)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Shopping Cart</span>
+      </nav>
+      <h1 class="page-title">Shopping Cart</h1>
+      <p class="page-sub">You have <strong id="cart-count">3</strong> items in your cart.</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="cart-heading">
+      <div class="container">
+        <h2 class="sr-only" id="cart-heading">Your Cart Items</h2>
+
+        <!-- Security Alert -->
+        <div class="alert alert-info" role="note" style="margin-bottom:24px">
+          <span aria-hidden="true">🔒</span>
+          <span>Your checkout is secured with <strong>256-bit SSL encryption</strong> and is <strong>PCI DSS compliant</strong>. Your payment details are always safe.</span>
+        </div>
+
+        <div class="cart-layout">
+          <!-- Cart Items -->
+          <div>
+            <table class="cart-table" aria-label="Cart items">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Total</th>
+                  <th scope="col"><span class="sr-only">Remove</span></th>
+                </tr>
+              </thead>
+              <tbody id="cart-body">
+                <tr data-price="279.99">
+                  <td>
+                    <div style="display:flex;align-items:center;gap:14px">
+                      <img class="cart-item-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&q=80" alt="Sony WH-1000XM5 Headphones" />
+                      <div>
+                        <div class="cart-item-name">Sony WH-1000XM5 Headphones</div>
+                        <div class="cart-item-sub">Color: Black | Warranty: 1 Year</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="product-price" style="font-size:1rem">₵279.99</span></td>
+                  <td>
+                    <div class="qty-control" role="group" aria-label="Quantity for Sony headphones">
+                      <button class="qty-btn" aria-label="Decrease quantity">−</button>
+                      <input class="qty-input" type="number" value="1" min="1" max="99" aria-label="Quantity" />
+                      <button class="qty-btn" aria-label="Increase quantity">+</button>
+                    </div>
+                  </td>
+                  <td><span class="product-price" style="font-size:1rem">₵279.99</span></td>
+                  <td><button class="btn-remove" aria-label="Remove Sony WH-1000XM5 from cart">Remove</button></td>
+                </tr>
+                <tr data-price="399.00">
+                  <td>
+                    <div style="display:flex;align-items:center;gap:14px">
+                      <img class="cart-item-img" src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=200&q=80" alt="Apple Watch Series 10" />
+                      <div>
+                        <div class="cart-item-name">Apple Watch Series 10</div>
+                        <div class="cart-item-sub">Size: 45mm | Band: Midnight Sport</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="product-price" style="font-size:1rem">₵399.00</span></td>
+                  <td>
+                    <div class="qty-control" role="group" aria-label="Quantity for Apple Watch">
+                      <button class="qty-btn" aria-label="Decrease quantity">−</button>
+                      <input class="qty-input" type="number" value="1" min="1" max="99" aria-label="Quantity" />
+                      <button class="qty-btn" aria-label="Increase quantity">+</button>
+                    </div>
+                  </td>
+                  <td><span class="product-price" style="font-size:1rem">₵399.00</span></td>
+                  <td><button class="btn-remove" aria-label="Remove Apple Watch from cart">Remove</button></td>
+                </tr>
+                <tr data-price="89.99">
+                  <td>
+                    <div style="display:flex;align-items:center;gap:14px">
+                      <img class="cart-item-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=200&q=80" alt="AeroFlow Pro Running Shoes" />
+                      <div>
+                        <div class="cart-item-name">AeroFlow Pro Running Shoes</div>
+                        <div class="cart-item-sub">Size: UK 10 | Color: Red/White</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td><span class="product-price" style="font-size:1rem">₵89.99</span></td>
+                  <td>
+                    <div class="qty-control" role="group" aria-label="Quantity for running shoes">
+                      <button class="qty-btn" aria-label="Decrease quantity">−</button>
+                      <input class="qty-input" type="number" value="1" min="1" max="99" aria-label="Quantity" />
+                      <button class="qty-btn" aria-label="Increase quantity">+</button>
+                    </div>
+                  </td>
+                  <td><span class="product-price" style="font-size:1rem">₵89.99</span></td>
+                  <td><button class="btn-remove" aria-label="Remove AeroFlow shoes from cart">Remove</button></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Cart Actions -->
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;flex-wrap:wrap;gap:12px">
+              <a href="products.html" class="btn btn-outline btn-sm">← Continue Shopping</a>
+              <button class="btn btn-outline btn-sm" id="update-cart">Update Cart</button>
+            </div>
+          </div>
+
+          <!-- Cart Summary -->
+          <aside class="cart-summary" aria-label="Order summary">
+            <h3 class="cart-summary-title">Order Summary</h3>
+
+            <div class="summary-row">
+              <span>Subtotal (3 items)</span>
+              <span id="subtotal">₵768.98</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span style="color:var(--clr-success)">Free</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (10%)</span>
+              <span id="tax">₵76.90</span>
+            </div>
+            <div class="summary-row">
+              <span>Discount</span>
+              <span id="discount" data-disc="0" style="color:var(--clr-success)">−₵0.00</span>
+            </div>
+
+            <!-- Coupon Code -->
+            <div class="coupon-row">
+              <label for="coupon-code" class="sr-only">Coupon code</label>
+              <input type="text" id="coupon-code" class="coupon-input" placeholder="Coupon code (try NEXMART10)" aria-label="Enter coupon code" />
+              <button class="btn btn-outline btn-sm" id="apply-coupon">Apply</button>
+            </div>
+            <div id="coupon-msg" role="status" aria-live="polite" style="font-size:0.8rem;margin-bottom:8px;min-height:18px"></div>
+
+            <div class="summary-row total">
+              <span>Total</span>
+              <span class="price" id="total" aria-live="polite">₵845.88</span>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:20px;font-size:1rem" id="checkout-btn" aria-label="Proceed to secure checkout">
+              🔒 Proceed to Checkout
+            </button>
+
+            <div class="trust-badges" style="margin-top:16px;justify-content:center">
+              <span class="trust-badge"><span class="badge-icon">✓</span> SSL Secured</span>
+              <span class="trust-badge"><span class="badge-icon">✓</span> PCI DSS</span>
+            </div>
+
+            <!-- Payment Icons -->
+            <div style="display:flex;gap:8px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+              <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.75rem;color:var(--clr-muted)">VISA</span>
+              <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.75rem;color:var(--clr-muted)">Mastercard</span>
+              <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.75rem;color:var(--clr-muted)">PayPal</span>
+              <span style="background:var(--clr-surface);border:1px solid var(--clr-border);border-radius:4px;padding:4px 10px;font-size:0.75rem;color:var(--clr-muted)">Mobile Money</span>
+            </div>
+          </aside>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;padding-bottom:24px">
+        <p class="footer-copy">© 2025 NexMart. All rights reserved.</p>
+        <nav class="footer-bottom-links" aria-label="Footer links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span class="toast-icon" aria-hidden="true">✅</span>
+    <span id="toast-msg">Cart updated!</span>
+  </div>
+
+  <script>
+    const navToggle=document.getElementById('nav-toggle');
+    const mainNav=document.getElementById('main-nav');
+    navToggle.addEventListener('click',()=>{const o=mainNav.classList.toggle('open');navToggle.setAttribute('aria-expanded',o);});
+    let fontSize=16;
+    document.getElementById('font-increase').addEventListener('click',()=>{fontSize=Math.min(fontSize+2,24);document.documentElement.style.fontSize=fontSize+'px';});
+    document.getElementById('font-decrease').addEventListener('click',()=>{fontSize=Math.max(fontSize-2,12);document.documentElement.style.fontSize=fontSize+'px';});
+    document.getElementById('font-reset').addEventListener('click',()=>{fontSize=16;document.documentElement.style.fontSize='16px';});
+    document.getElementById('contrast-toggle').addEventListener('click',function(){document.body.classList.toggle('high-contrast');this.setAttribute('aria-pressed',document.body.classList.contains('high-contrast'));});
+    document.getElementById('header-search-input').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.value.trim())window.location.href=`products.html?q=${encodeURIComponent(e.target.value.trim())}`;});
+
+    function showToast(msg){const t=document.getElementById('toast');document.getElementById('toast-msg').textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+
+    // Qty controls
+    document.querySelectorAll('.qty-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const input=btn.parentElement.querySelector('.qty-input');
+        let v=parseInt(input.value)||1;
+        if(btn.textContent==='−') v=Math.max(1,v-1);
+        else v=Math.min(99,v+1);
+        input.value=v;
+        updateTotals();
+      });
+    });
+    document.querySelectorAll('.qty-input').forEach(inp=>{inp.addEventListener('change',updateTotals);});
+
+    // Remove items
+    document.querySelectorAll('.btn-remove').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        btn.closest('tr').remove();
+        const count=document.querySelectorAll('#cart-body tr').length;
+        document.getElementById('cart-count').textContent=count;
+        updateTotals();
+        showToast('Item removed from cart.');
+      });
+    });
+
+    function updateTotals(){
+      let sub=0;
+      document.querySelectorAll('#cart-body tr').forEach(row=>{
+        const price=parseFloat(row.dataset.price)||0;
+        const qty=parseInt(row.querySelector('.qty-input')?.value)||1;
+        sub+=price*qty;
+        const cells=row.querySelectorAll('td');
+        if(cells[3]) cells[3].querySelector('.product-price').textContent='$'+(price*qty).toFixed(2);
+      });
+      const disc=parseFloat(document.getElementById('discount').dataset.disc||0);
+      const tax=(sub-disc)*0.1;
+      const total=sub-disc+tax;
+      document.getElementById('subtotal').textContent='$'+sub.toFixed(2);
+      document.getElementById('tax').textContent='$'+tax.toFixed(2);
+      document.getElementById('total').textContent='$'+total.toFixed(2);
+    }
+
+    // Coupon
+    document.getElementById('apply-coupon').addEventListener('click',()=>{
+      const code=document.getElementById('coupon-code').value.trim().toUpperCase();
+      const msg=document.getElementById('discount');
+      const couponMsg=document.getElementById('coupon-msg');
+      if(code==='NEXMART10'){
+        const sub=parseFloat(document.getElementById('subtotal').textContent.replace('$',''))||0;
+        const disc=sub*0.1;
+        msg.textContent='−$'+disc.toFixed(2);
+        msg.dataset.disc=disc;
+        couponMsg.style.color='var(--clr-success)';
+        couponMsg.textContent='✅ Coupon applied! 10% discount added.';
+        updateTotals();
+      } else {
+        msg.dataset.disc = 0;
+        couponMsg.style.color='var(--clr-danger)';
+        couponMsg.textContent='❌ Invalid coupon code. Try NEXMART10.';
+        updateTotals();
+      }
+    });
+
+    document.getElementById('update-cart').addEventListener('click',()=>{updateTotals();showToast('Cart updated!');});
+    document.getElementById('checkout-btn').addEventListener('click',()=>showToast('🔒 Redirecting to secure checkout…'));
+  </script>
+</body>
+</html>

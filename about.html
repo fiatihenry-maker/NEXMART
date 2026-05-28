@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about NexMart — our story, mission, team, and values that drive Ghana's fastest e-commerce platform." />
+  <title>About Us — NexMart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="a11y-bar" role="complementary" aria-label="Accessibility tools">
+    <div class="a11y-inner">
+      <span class="a11y-label">Accessibility:</span>
+      <div class="font-size-controls" role="group" aria-label="Font size controls">
+        <span class="font-size-label">Text:</span>
+        <button class="font-size-btn" id="font-decrease" aria-label="Decrease font size">A−</button>
+        <button class="font-size-btn" id="font-reset" aria-label="Reset font size">A</button>
+        <button class="font-size-btn" id="font-increase" aria-label="Increase font size">A+</button>
+      </div>
+      <button class="a11y-toggle" id="contrast-toggle" aria-pressed="false" aria-label="Toggle high contrast mode">◑ High Contrast</button>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="NexMart Home">
+        <div class="logo-icon" aria-hidden="true">N</div>
+        <span class="logo-text">Nex<span>Mart</span></span>
+      </a>
+      <div class="header-search" role="search">
+        <svg class="search-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="header-search-input" placeholder="Search products…" aria-label="Search products" />
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" class="nav-cta">🛒 Cart (3)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">About Us</span>
+      </nav>
+      <h1 class="page-title">Our Story</h1>
+      <p class="page-sub">How NexMart grew from a dorm-room idea to Ghana's leading e-commerce platform.</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- Mission Section -->
+    <section class="section" aria-labelledby="mission-heading">
+      <div class="container">
+        <div class="about-hero-grid">
+          <div>
+            <span class="section-label" aria-hidden="true">Our Mission</span>
+            <h2 class="section-title" id="mission-heading">Making Quality Shopping Accessible to Everyone</h2>
+            <p style="color:var(--clr-muted);margin-top:16px;line-height:1.8;font-size:1rem">
+              NexMart was founded in 2020 by a team of University of Ghana students who believed that world-class online shopping shouldn't be limited to people in major western cities. We started with just 50 products and three team members operating from a single room on campus.
+            </p>
+            <p style="color:var(--clr-muted);margin-top:14px;line-height:1.8;font-size:1rem">
+              Today, NexMart carries over 14,700 products across 40+ categories, serves customers in all 16 regions of Ghana, and processes over 10,000 orders every single day. Our mission is simple: bring every product you could ever want to your doorstep, fast, safe, and affordably.
+            </p>
+            <div style="display:flex;gap:16px;margin-top:28px;flex-wrap:wrap">
+              <a href="products.html" class="btn btn-primary">Shop Now</a>
+              <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+            </div>
+          </div>
+          <div class="about-img-block">
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&q=80" alt="NexMart team working in a modern office environment with laptops and packages" />
+            <div class="about-stat-badge" aria-label="Founded in 2020">
+              <div class="about-stat-num">2020</div>
+              <div class="about-stat-label">Founded</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row" role="list" aria-label="NexMart key statistics">
+          <div class="stat-box" role="listitem">
+            <div class="stat-num" aria-label="2 million plus customers">2M+</div>
+            <div class="stat-label">Happy Customers</div>
+          </div>
+          <div class="stat-box" role="listitem">
+            <div class="stat-num" aria-label="14,700 plus products">14.7K</div>
+            <div class="stat-label">Products Listed</div>
+          </div>
+          <div class="stat-box" role="listitem">
+            <div class="stat-num" aria-label="10,000 daily orders">10K</div>
+            <div class="stat-label">Daily Orders</div>
+          </div>
+          <div class="stat-box" role="listitem">
+            <div class="stat-num" aria-label="16 regions served">16</div>
+            <div class="stat-label">Regions Served</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section" style="background:var(--clr-surface);border-top:1px solid var(--clr-border);border-bottom:1px solid var(--clr-border)" aria-labelledby="values-heading">
+      <div class="container">
+        <div class="section-header" style="text-align:center">
+          <span class="section-label" aria-hidden="true">What We Stand For</span>
+          <h2 class="section-title" id="values-heading">Our Core Values</h2>
+        </div>
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-icon" aria-hidden="true">🤝</div>
+            <h3 class="feature-title">Trust First</h3>
+            <p class="feature-desc">Every policy we write, every technology we build, starts with a single question: Does this help our customers trust us more?</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon" aria-hidden="true">⚡</div>
+            <h3 class="feature-title">Speed Matters</h3>
+            <p class="feature-desc">We obsess over delivery speed because we know your time is valuable. 98% of our orders arrive within the promised window.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon" aria-hidden="true">🌍</div>
+            <h3 class="feature-title">Local First</h3>
+            <p class="feature-desc">We prioritise Ghanaian-made products and local vendors, helping grow the domestic economy while serving our customers.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-icon" aria-hidden="true">♻️</div>
+            <h3 class="feature-title">Sustainability</h3>
+            <p class="feature-desc">We've committed to carbon-neutral delivery by 2027. Our packaging is 100% recyclable and our warehouses run on solar power.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" aria-labelledby="team-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" aria-hidden="true">The People</span>
+          <h2 class="section-title" id="team-heading">Meet Our Team</h2>
+          <p class="section-sub">The passionate people building Ghana's future of commerce.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+             <div class="team-name">Henry Fiati</div>
+            <div class="team-role">CEO &amp; Co-founder</div>
+            <p style="font-size:0.8rem;color:var(--clr-muted);margin-top:8px">Computer Science grad, UG 2019. Passionate about tech and African economic growth.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-name">Abena Darko</div>
+            <div class="team-role">CTO &amp; Co-founder</div>
+            <p style="font-size:0.8rem;color:var(--clr-muted);margin-top:8px">Software engineer and cloud architect. Built our entire platform infrastructure from scratch.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-name">Emmanuel Boateng</div>
+            <div class="team-role">Head of Logistics</div>
+            <p style="font-size:0.8rem;color:var(--clr-muted);margin-top:8px">Former DHL manager. Designed our hub-and-spoke delivery network across Ghana.</p>
+          </article>
+          <article class="team-card">
+            <div class="team-name">Akosua Frimpong</div>
+            <div class="team-role">Head of Marketing</div>
+            <p style="font-size:0.8rem;color:var(--clr-muted);margin-top:8px">Built NexMart's brand from zero to 2M followers across social media in 4 years.</p>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section (second multimedia format) -->
+    <section class="section" style="padding-top:0" aria-labelledby="story-video-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" aria-hidden="true">Behind the Scenes</span>
+          <h2 class="section-title" id="story-video-heading">Our Warehouse in Action</h2>
+          <p class="section-sub">See how we process thousands of orders daily with precision and care.</p>
+        </div>
+        <figure class="media-player">
+          <video controls poster="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&q=80" aria-label="NexMart warehouse operations video — 3 minutes">
+            <source src="https://www.pexels.com/download/video/19896989/" type="video/mp4" />
+            <p>Your browser does not support HTML5 video. <a href="https://media.istockphoto.com/id/1273494455/video/retail-warehouse-full-of-shelves-with-goods-in-cardboard-boxes-workers-scan-and-sort-packages.mp4?p=1&s=mp4-640x640-is&k=20&c=GtFOGyB_dUUKOVMeAYzVGb9Rwsu1_hDagqDoubnQBJw=">Download the video</a> instead.</p>
+          </video>
+          <figcaption>📦 NexMart Warehouse Operations — A day in the life of 10,000 orders</figcaption>
+        </figure>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;padding-bottom:24px">
+        <p class="footer-copy">© 2025 NexMart. All rights reserved.</p>
+        <nav class="footer-bottom-links" aria-label="Footer links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="contact.html">Contact</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => { const o=mainNav.classList.toggle('open'); navToggle.setAttribute('aria-expanded',o); });
+    let fontSize=16;
+    document.getElementById('font-increase').addEventListener('click', ()=>{fontSize=Math.min(fontSize+2,24);document.documentElement.style.fontSize=fontSize+'px';});
+    document.getElementById('font-decrease').addEventListener('click', ()=>{fontSize=Math.max(fontSize-2,12);document.documentElement.style.fontSize=fontSize+'px';});
+    document.getElementById('font-reset').addEventListener('click', ()=>{fontSize=16;document.documentElement.style.fontSize='16px';});
+    document.getElementById('contrast-toggle').addEventListener('click', function(){document.body.classList.toggle('high-contrast');this.setAttribute('aria-pressed',document.body.classList.contains('high-contrast'));});
+    document.getElementById('header-search-input').addEventListener('keydown', e=>{if(e.key==='Enter'&&e.target.value.trim()) window.location.href=`products.html?q=${encodeURIComponent(e.target.value.trim())}`;});
+  </script>
+</body>
+</html>

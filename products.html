@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse all NexMart products. Filter by category, sort by price or rating, and find exactly what you need." />
+  <title>Products — NexMart</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="a11y-bar" role="complementary" aria-label="Accessibility tools">
+    <div class="a11y-inner">
+      <span class="a11y-label">Accessibility:</span>
+      <div class="font-size-controls" role="group" aria-label="Font size controls">
+        <span class="font-size-label">Text:</span>
+        <button class="font-size-btn" id="font-decrease" aria-label="Decrease font size">A−</button>
+        <button class="font-size-btn" id="font-reset" aria-label="Reset font size">A</button>
+        <button class="font-size-btn" id="font-increase" aria-label="Increase font size">A+</button>
+      </div>
+      <button class="a11y-toggle" id="contrast-toggle" aria-pressed="false" aria-label="Toggle high contrast mode">◑ High Contrast</button>
+    </div>
+  </div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="NexMart Home">
+        <div class="logo-icon" aria-hidden="true">N</div>
+        <span class="logo-text">Nex<span>Mart</span></span>
+      </a>
+      <div class="header-search" role="search">
+        <svg class="search-icon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" id="header-search-input" placeholder="Search products…" aria-label="Search products" autocomplete="off" />
+      </div>
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html" class="active" aria-current="page">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" class="nav-cta">🛒 Cart (3)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span class="breadcrumb-current" aria-current="page">Products</span>
+      </nav>
+      <h1 class="page-title">All Products</h1>
+      <p class="page-sub">Showing 16 of 14,700+ products. Use filters to narrow down.</p>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="products-heading">
+      <div class="container">
+
+        <!-- On-page Content Search -->
+        <div class="page-search-wrap" role="search" aria-label="Search within this page">
+          <svg class="page-search-icon" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input
+            type="search"
+            id="page-search"
+            class="page-search-input"
+            placeholder="Search products on this page (e.g. 'headphones', 'shoes'…)"
+            aria-label="Search products on this page"
+            autocomplete="off"
+          />
+        </div>
+        <div id="search-results-info" aria-live="polite" aria-atomic="true" style="font-size:0.85rem;color:var(--clr-muted);margin-bottom:12px"></div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" role="group" aria-label="Product filters">
+          <span class="filter-label" id="filter-label">Filter:</span>
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">Fashion products</button>
+          <button class="filter-btn" data-filter="hoodies" aria-pressed="false">Hoodies</button>
+          <button class="filter-btn" data-filter="Headwears" aria-pressed="false">Headwears</button>
+          <button class="filter-btn" data-filter="Pants" aria-pressed="false">Pants</button>
+          <button class="filter-btn" data-filter="Shirts" aria-pressed="false">Shirts</button>
+          <button class="filter-btn" data-filter="Footwear" aria-pressed="false">Footwear</button>
+          <label for="sort-select" class="sr-only">Sort products by</label>
+          <select class="sort-select" id="sort-select" aria-label="Sort products">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Newest First</option>
+          </select>
+        </div> 
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-grid" aria-label="Product listings">
+
+          <article class="product-card" data-category="Hoodies" data-price="279.99" data-rating="4.8" aria-label="Supreme Hoodies">
+            <div class="product-card-img">
+              <span class="product-badge">Hot</span>
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://images.unsplash.com/photo-1601790583818-f86ba5580b1f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D" alt="Supreme Hoodies"s loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Hoodies</div>
+              <h2 class="product-name">Supreme Hoodies</h2>
+              <div class="product-rating" aria-label="4.8 out of 5, 2341 reviews">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-count">(2,341)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price">₵279.99</div><div class="product-price-old">₵399.99</div></div>
+                <button class="btn-add-cart" aria-label="Add Supreme Hoodies to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Hoodies" data-price="399.00" data-rating="4.9" aria-label="Apple Watch Series 10">
+            <div class="product-card-img">
+              <span class="product-badge new">New</span>
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://images.unsplash.com/photo-1641377061384-61e0ce81f717?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2hhbXBpb24lMjBob29kaWUlMjBsb2dvfGVufDB8fDB8fHww" alt="Champion Hoodies" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Hoodies</div>
+              <h2 class="product-name">Champion Hoodies</h2>
+              <div class="product-rating" aria-label="4.9 out of 5, 4102 reviews">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-count">(4,102)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price">₵399.00</div></div>
+                <button class="btn-add-cart" aria-label="Add Champion Hoodies to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Headwears" data-price="89.99" data-rating="4.6" aria-label="Caps">
+            <div class="product-card-img">
+              <span class="product-badge sale">Sale</span>
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://images.unsplash.com/photo-1620327467532-6ebaca6273ed?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNhcHN8ZW58MHx8MHx8fDA%3D" alt="Caps" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Headwears</div>
+              <h2 class="product-name">Caps</h2>
+              <div class="product-rating" aria-label="4.6 out of 5, 876 reviews">
+                <span class="stars" aria-hidden="true">★★★★☆</span>
+                <span class="rating-count">(876)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price">₵89.99</div><div class="product-price-old">₵149.99</div></div>
+                <button class="btn-add-cart" aria-label="Add caps to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Pants" data-price="349.99" data-rating="4.7" aria-label="Slim Fit Jeans">
+            <div class="product-card-img">
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://images.unsplash.com/photo-1475178626620-a4d074967452?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8c2xpbSUyMGZpdCUyMGplYW5zfGVufDB8fDB8fHww" alt="Slim Fit Jeans" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Pants</div>
+              <h2 class="product-name">Slim Fit Jeans</h2>
+              <div class="product-rating" aria-label="4.7 out of 5, 1234 reviews">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-count">(1,234)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price">₵349.99</div><div class="product-price-old">₵799.99</div></div>
+                <button class="btn-add-cart" aria-label="Add Slim Fit Jeans to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="fashion" data-price="59.99" data-rating="4.5" aria-label="Urban Linen Blazer">
+            <div class="product-card-img">
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://media.istockphoto.com/id/842776352/photo/young-modern-gentleman.jpg?s=1024x1024&w=is&k=20&c=qVFSsb81XkeGPsEwNxmz-qfsvP3g4z-Jaf7b52Hhap0=" alt="Navy blue urban linen blazer" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Fashion</div>
+              <h2 class="product-name">Urban Linen Blazer</h2>
+              <div class="product-rating" aria-label="4.5 out of 5, 234 reviews">
+                <span class="stars" aria-hidden="true">★★★★☆</span>
+                <span class="rating-count">(234)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price">₵59.99</div></div>
+                <button class="btn-add-cart" aria-label="Add Urban Linen Blazer to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="footwear" data-price="250.99" data-rating="4.8" aria-label="">
+            <div class="product-card-img">
+              <span class="product-badge new">New</span>
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://images.unsplash.com/photo-1670535048348-cc772ca20bfd?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8am9yZGFuJTIwMTF8ZW58MHx8MHx8fDA%3D" alt="Jordan 11" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Footwear</div>
+              <h2 class="product-name">Jordan 11</h2>
+              <div class="product-rating" aria-label="4.8 out of 5, 1567 reviews">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-count">(1,567)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price">₵250.99</div></div>
+                <button class="btn-add-cart" aria-label="Add Jordan 11s to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="Shirts" data-price="129.99" data-rating="4.4" aria-label="Cotton Shirts">
+            <div class="product-card-img">
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://images.unsplash.com/photo-1642764873855-934ed87e79e1?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fENvdHRvbiUyMHNoaXJ0c3xlbnwwfHwwfHx8MA%3D%3D" alt="Amazon Echo smart home hub" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Shirts</div>
+              <h2 class="product-name">Cotton Shirts</h2>
+              <div class="product-rating" aria-label="4.4 out of 5, 543 reviews">
+                <span class="stars" aria-hidden="true">★★★★☆</span>
+                <span class="rating-count">(543)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price"> ₵129.99</div></div>
+                <button class="btn-add-cart" aria-label="Add Cotton Shirts to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-category="footwear" data-price="999.00" data-rating="4.9" aria-label="Women's Heels">
+            <div class="product-card-img">
+              <span class="product-badge new">New</span>
+              <button class="product-wishlist" aria-label="Add to wishlist">♡</button>
+              <img src="https://plus.unsplash.com/premium_photo-1711051513016-72baa1035293?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29tZW4lMjBzaG9lc3xlbnwwfHwwfHx8MA%3D%3D" alt="Women's Heels" loading="lazy" />
+            </div>
+            <div class="product-card-body">
+              <div class="product-category">Footwear</div>
+              <h2 class="product-name">Women's Heels</h2>
+              <div class="product-rating" aria-label="4.9 out of 5, 8901 reviews">
+                <span class="stars" aria-hidden="true">★★★★★</span>
+                <span class="rating-count">(8,901)</span>
+              </div>
+              <div class="product-price-row">
+                <div><div class="product-price"> ₵999.00</div></div>
+                <button class="btn-add-cart" aria-label="Add Women's Heels to cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.products-grid -->
+
+        <!-- No Results Message -->
+        <div id="no-results" style="display:none;text-align:center;padding:64px 0;" role="status" aria-live="polite">
+          <div style="font-size:3rem;margin-bottom:16px" aria-hidden="true">🔍</div>
+          <h3 style="font-family:var(--ff-head);color:var(--clr-white);margin-bottom:8px">No products found</h3>
+          <p style="color:var(--clr-muted)">Try a different search term or clear your filters.</p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (same as index) -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;padding-bottom:24px">
+        <p class="footer-copy">© 2026 NexMart. All rights reserved.</p>
+        <nav class="footer-bottom-links" aria-label="Footer links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="cart.html">Cart</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <span class="toast-icon" aria-hidden="true">✅</span>
+    <span id="toast-msg">Item added to cart!</span>
+  </div>
+
+  <script>
+    // Nav Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => {
+      const open = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', open);
+    });
+
+    // Accessibility
+    let fontSize = 16;
+    document.getElementById('font-increase').addEventListener('click', () => { fontSize = Math.min(fontSize+2,24); document.documentElement.style.fontSize=fontSize+'px'; });
+    document.getElementById('font-decrease').addEventListener('click', () => { fontSize = Math.max(fontSize-2,12); document.documentElement.style.fontSize=fontSize+'px'; });
+    document.getElementById('font-reset').addEventListener('click', () => { fontSize=16; document.documentElement.style.fontSize='16px'; });
+    document.getElementById('contrast-toggle').addEventListener('click', function(){ document.body.classList.toggle('high-contrast'); this.setAttribute('aria-pressed', document.body.classList.contains('high-contrast')); });
+
+    // Toast
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toast-msg').textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 3000);
+    }
+    document.querySelectorAll('.btn-add-cart').forEach(b => b.addEventListener('click', () => showToast('✅ Item added to cart!')));
+    document.querySelectorAll('.product-wishlist').forEach(b => b.addEventListener('click', () => { b.textContent='♥'; b.style.color='#ef4444'; showToast('❤️ Added to wishlist!'); }));
+
+    // Category Filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.product-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed','false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed','true');
+            const filter = (btn.dataset.filter || '').toLowerCase();
+            cards.forEach(card => {
+              const cat = (card.dataset.category || '').toLowerCase();
+              const show = filter === 'all' || cat === filter;
+              card.style.display = show ? '' : 'none';
+            });
+        checkNoResults();
+      });
+    });
+
+    // On-page Text Search with highlighting
+    const pageSearch = document.getElementById('page-search');
+    const resultsInfo = document.getElementById('search-results-info');
+
+    function removeHighlights() {
+      document.querySelectorAll('.highlight').forEach(el => {
+        el.parentNode.replaceChild(document.createTextNode(el.textContent), el);
+      });
+    }
+
+    pageSearch.addEventListener('input', () => {
+      removeHighlights();
+      const query = pageSearch.value.trim().toLowerCase();
+      if (!query) {
+        cards.forEach(c => c.style.display = '');
+        resultsInfo.textContent = '';
+        checkNoResults();
+        return;
+      }
+      let count = 0;
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+          card.style.display = '';
+          // Highlight matching text
+          const nameEl = card.querySelector('.product-name');
+          if (nameEl && nameEl.textContent.toLowerCase().includes(query)) {
+            const orig = nameEl.textContent;
+            const idx = orig.toLowerCase().indexOf(query);
+            nameEl.innerHTML = orig.substring(0,idx) + '<mark class="highlight">' + orig.substring(idx, idx+query.length) + '</mark>' + orig.substring(idx+query.length);
+          }
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      resultsInfo.textContent = count > 0 ? `Found ₵{count} product₵{count!==1?'s':''} matching "${pageSearch.value.trim()}"` : '';
+      checkNoResults();
+    });
+
+    function checkNoResults() {
+      const visible = [...cards].filter(c => c.style.display !== 'none').length;
+      document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+    }
+  </script>
+</body>
+</html>
